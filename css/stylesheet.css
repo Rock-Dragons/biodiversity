@@ -1,3 +1,134 @@
-body{
-    background-color: grey;
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+}
+body{font-family: 'Times New Roman';}
+nav{
+    height: 80px;
+    width: 100%;
+    background:rgb(67, 67, 215);
+}
+label.logo{
+font-size: 35px;
+    font-weight: bold;
+    color: bisque;
+    padding: 0 100px;
+    line-height: 80px;
+}
+nav ul{
+    float: right;
+    margin-right: 40px;
+}
+nav li{
+    display: inline-block;
+    margin: 0 8px;
+    line-height: 80px;
+}
+nav a{
+    color: white;
+    font-size: 18px;
+    text-transform: capitalize;
+    border: 1px transparent;
+    padding: 7px 10px;
+    border-radius: 3px;
+}
+a.active,a:hover{
+    border: 1px solid white;
+    transition: .5s;
+}
+nav #icon{
+    color: white;
+    font-size: 30px;
+    line-height: 80px;
+    float: right;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+}
+@media (max-width: 1048px){
+    label.logo{
+        font-size: 32px;
+        padding-left: 60px;
+    }
+    nav ul{
+        margin-right: 20px;
+    }
+    nav a{
+        font-size: 17px;
+    }
+}
+@media (max-width: 909px){
+    nav #icon{
+        display: block;
+    }
+    nav ul{
+        position: fixed;
+        width: 50%;
+        height: 100vh;
+        background: #35402f;
+        top: 80px;
+        left: -100%;
+        text-align: center;
+        transition: all .5s;
+    }
+    nav li{
+        display: block;
+        margin: 50px 0;
+        line-height: 30px;
+    }
+    nav a{font-size: 20px;}
+    a.active,a:hover{
+    border: none;
+    color: #3498db;
+    }
+    nav ul.show{
+        left: 0;
+    }
+}
+video{
+    position: fixed;
+    height: 30vh - 30%;
+    width: 100%;
+}
+.container{
+    width: 100%;
+    min-height: 100vh;
+    padding: 5%;
+    background-image: linear-gradient(rgba(0,8,51,0.9), rgba(0, 8, 51, 0.9)), url(images/redParrot,png);
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.search-bar{
+    width: 100%;
+    max-width: 700px;
+    background: rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    border-radius: 60px;
+    padding: 10px 20px;
+    backdrop-filter: blur(4px) saturate(180%);
+}
+.search-bar input{
+    background: transparent;
+    flex: 1;
+    border: 0;
+    outline: none;
+    padding: 12px 10 px;
+    font-size: 20px;
+    color: black;
+}
+::placeholder{color: #cac7ff;}
+.search-bar button{width: 25px;}
+.search-bar button{
+    border: 0;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    background: #58629b;
+    cursor: pointer;
 }
