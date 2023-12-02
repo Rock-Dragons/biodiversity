@@ -4,7 +4,12 @@
     text-decoration: none;
     list-style: none;
 }
-body{font-family: 'Times New Roman';}
+body{
+    font-family: 'Times New Roman';
+    background-image: url("/images/parrot.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
 nav{
     height: 80px;
     width: 100%;
