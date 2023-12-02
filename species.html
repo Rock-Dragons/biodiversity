@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biodiversity | Shop</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      $(document).ready(function(){
+        $('#icon').click(function(){
+          $('ul').toggleClass('show');
+        });
+      });
+    </script>
+    
+</head>
+<body id="speciesBody">
+    <header>
+        <nav>
+            <label class="logo section-header">DragonsRock</label>
+            <ul>
+                <li><a  href="index.html">About</a></li>
+                <li><a href="news.html">News</a></li>
+                <li><a class="active" href="#">Species diversity</a></li>
+                <li><a href="#">Genetic diversity</a></li>
+                <li><a href="#">Ecosystem diversity</a></li>
+                <li><a  href="store.html">Store</a></li>
+            </ul>
+            <label id="icon">
+                <i class="fas fa-bars"></i>
+            </label>
+        </nav>
+        <hr>
+    </header>
+
+
+    <h1 class="section-header" style="color: aliceblue;">The variety of species</h1>
+    <form action="">
+        <input type="text" id="searchInput" placeholder="Choose a species or an ecosystem..">
+        <button id="searchButton">Search</button>
+    </form>
+
+    <div>
+        <p class="definition">Species diversity, also known as biodiversity, refers to the variety and abundance of different species within a specific ecosystem or habitat. It encompasses not only the number of species present but also their distribution, genetic variation, and ecological roles. High species diversity is indicative of a healthy ecosystem, providing stability, resilience, and numerous benefits, such as pollination, nutrient cycling, and support for various life forms. Protecting and preserving species diversity is crucial for maintaining the balance of ecosystems and ensuring the sustainability of life on Earth.</p>
+    </div>
+
+
+    <div class="searchResults">
+        <div class="searchResult">
+            <img src="https://images.unsplash.com/photo-1682686581030-7fa4ea2b96c3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1MjcxNDR8MHwxfHNlYXJjaHw2MHx8c3BlY2llcyUyMGRpdmVyc2l0eSUyMGJpb2RpdmVyc2l0eXxlbnwwfHx8fDE3MDE1MzYzODh8MA&ixlib=rb-4.0.3&q=80&w=400" 
+            alt="frendly turtle">
+        </div>
+        <div class="searchResult">
+            <img src="https://images.unsplash.com/photo-1637641591576-6aede89b6414?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1MjcxNDR8MHwxfHNlYXJjaHw1NXx8YmlvZGl2ZXJzaXR5fGVufDB8fHx8MTcwMTUzNjY1Nnww&ixlib=rb-4.0.3&q=80&w=400" 
+            alt="fish in plastic bag">
+        </div>
+        <div class="searchResult">
+            <img src="https://images.unsplash.com/photo-1466721591366-2d5fba72006d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1MjcxNDR8MHwxfHNlYXJjaHwxMjh8fHNwZWNpZXMlMjBkaXZlcnNpdHklMjBhbmltYWxzfGVufDB8fHx8MTcwMTUzNzA4NXww&ixlib=rb-4.0.3&q=80&w=400" 
+            alt="antelope and zebra">
+        </div>
+    </div>
+
+    <button id="showMore">Show more</button>
+
+    <div>
+        <p class="definition" style="font-weight: bold;">Where species diversity thrives, the whole planet flourishes!</p>
+        
+        <p class="definition">Spearheading conservation efforts to safeguard species diversity involves understanding the intricate web of interactions among species and their environment. It involves preserving habitats, mitigating human-induced disruptions like deforestation or pollution, and addressing climate change. The preservation of species diversity isn't solely about protecting individual species; it's about preserving the delicate interconnections that sustain life on our planet. By valuing and conserving species diversity, we safeguard not only the diversity of life forms but also the invaluable services and resources ecosystems provide, ensuring a more harmonious coexistence between humanity and nature.</p>
+    </div>
+
+
+
+
+
+    <script src="/js/species.js"></script>
+</body>
+</html>
