@@ -2,7 +2,7 @@
 
 @font-face {
     font-family: "Booter - Zero Zero";
-    src: url("fonts/BOOTEROF.ttf") format("woff");
+    src: url("/fonts/BOOTEROF.ttf") format("woff");
         /* url("fonts/BOOTEROO.ttf") format("woff2"); */
         font-weight: normal;
         font-style: normal;
@@ -261,7 +261,7 @@ nav #icon{
     font-size: 1.1em;
 }
 
-.btn-purcase {
+.btn-purchase {
     display: block;
     margin: 40px auto 80px auto;
     font-size: 1.75em;
@@ -301,8 +301,7 @@ nav #icon{
     margin-right: 50px;
 }
 
-
-form {
+#spform {
     display: flex;
     justify-content: center;
     align-items: center;
