@@ -1,3 +1,5 @@
+const actualPage = "news";
+
 var newsDataArr = []
 
 document.addEventListener("DOMContentLoaded", function() {
