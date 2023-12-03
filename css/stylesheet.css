@@ -1,3 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Metal+Mania&family=Dancing+Script&family=Delicious+Handrawn&family=Luckiest+Guy&family=Pacifico&family=Poppins:wght@100;200;300;400;500;600;700;800&family=Raleway&display=swap');
+
+
+@font-face {
+    font-family: "Booter - Zero Zero";
+    src: url("/fonts/BOOTEROF.ttf") format("woff");
+        /* url("fonts/BOOTEROO.ttf") format("woff2"); */
+        font-weight: normal;
+        font-style: normal;
+} 
+
 *{
     padding: 0;
     margin: 0;
@@ -6,23 +17,25 @@
 }
 body{
     font-family: 'Times New Roman';
-    background-image: url("/images/parrot.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
 }
 nav{
     height: 80px;
     width: 100%;
-    /* background:rgb(67, 67, 215); */
     background-color: rgba(0, 0, 0, .6);
     background-blend-mode: multiply;
     background-image: url("/images/abstract.jpg");
 }
+#navbar-container{
+    z-index: 100;
+}
+.navbar-element{
+   font-size: 10px;
+}
 label.logo{
-font-size: 35px;
+    font-size: 28px;
     font-weight: bold;
     color: bisque;
-    padding: 0 100px;
+    padding: 0 50px;
     line-height: 80px;
 }
 nav ul{
@@ -57,7 +70,7 @@ nav #icon{
 }
 @media (max-width: 1048px){
     label.logo{
-        font-size: 32px;
+        font-size: 28px;
         padding-left: 60px;
     }
     nav ul{
@@ -67,7 +80,7 @@ nav #icon{
         font-size: 17px;
     }
 }
-@media (max-width: 909px){
+@media (max-width: 980px){
     nav #icon{
         display: block;
     }
@@ -100,7 +113,7 @@ video{
     height: 30vh - 30%;
     width: 100%;
 }
-.container{
+/* .container{
     width: 100%;
     min-height: 100vh;
     padding: 5%;
@@ -110,7 +123,10 @@ video{
     display: flex;
     align-items: center;
     justify-content: center;
-}
+} 
+
+
+
 .search-bar{
     width: 100%;
     max-width: 700px;
@@ -139,4 +155,313 @@ video{
     height: 60px;
     background: #58629b;
     cursor: pointer;
+}*/
+
+.band-name {
+    text-align: center;
+    margin: 0;
+    font-size: 4em;
+    font-family: "Booter - Zero Zero";
+    font-weight: normal;
+    color: #16250e;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 1.5em;
+}
+
+.section-header {
+    font-family: "Metal Mania";
+    font-weight: normal;
+    color: #333;
+    text-align: center;
+    font-size: 2.5em;
+}
+
+
+.shop-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.shop-item {
+    margin: 30px;
+}
+
+.shop-item-title {
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.shop-item-img {
+    height: 250px;
+}
+
+.shop-item-detalies {
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    justify-content: space-between;
+}
+
+.shop-item-price {
+    flex-grow: 1;
+    color: #333;
+}
+
+.cart-header {
+    font-weight: bold;
+    font-size: 1.2em;
+    color: #333;
+}
+
+.cart-column {
+    border-bottom: 1px solid black;
+    margin-right: 1.5em;
+    padding-bottom: 10px;
+    margin-top: 10px;
+    align-items: center;
+    display: flex;
+
+}
+
+.cart-row {
+    display: flex;
+}
+
+.cart-item {
+    width: 45%;
+}
+
+.cart-price {
+    width: 20%;
+    font-size: 1.2em;
+    color: #333;
+}
+
+.cart-quantity {
+    width: 35%;
+}
+
+.cart-item-title {
+    color: #333;
+    margin-left: .5em;
+    font-size: 10px;
+}
+
+.cart-item-img {
+    width: 74px;
+    height: auto;
+    border-radius: 10px;
+}
+
+.btn-danger {
+    color: whitesmoke;
+    background-color: #EB5757;
+    border: none;
+    border-radius: .3em;
+    font-weight: bold;
+}
+
+.btn-danger:hover {
+    background-color: #CC4C4C;
+}
+
+.cart-quantity-input {
+    height: 34px;
+    width: 50px;
+    border-radius: 5px;
+    border: 1px solid #56CCF2;
+    background-color: #eee;
+    color: #333;
+    padding: 0;
+    text-align: center;
+    font-size: 1.2em;
+    margin-right: 25px;
+}
+
+.cart-row:last-child {
+ border-bottom: 1px solid black;
+}
+
+.cart-row:last-child .cart-column {
+    border: none;
+}
+
+.cart-total {
+    text-align: end;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+.cart-total-title {
+    font-weight: bold;
+    font-size: 1.5em;
+    color: black;
+    margin-right: 20px;
+}
+
+.cart-total-price {
+    color: #333;
+    font-size: 1.1em;
+}
+
+.btn-purchase {
+    display: block;
+    margin: 40px auto 80px auto;
+    font-size: 1.75em;
+}
+
+.btn-primary {
+    color: white;
+    background-color: #56CCF2;
+    border: none;
+    border-radius: .3em;
+    font-weight: bold;
+}
+
+.btn-primary:hover {
+    background-color: #209CDB;
+}
+
+/* ------------------------------- */
+
+
+#speciesBody {
+    background-image: url("/images/background.jpg");
+    background-color: rgba(0, 0, 0, .3);
+    background-blend-mode: multiply;
+    color: #eee;
+}
+.definition {
+    text-align: center;
+    margin: 0;
+    font-size: 2.2em;
+    /* font-family: "Booter - Zero Zero";
+     */
+     font-family :"Delicious Handrawn";
+    font-weight: lighter;
+    color: #aff589;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+#spform {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 60px;
+}
+
+#searchInput {
+    width: 60%;
+    max-width: 400px;
+    padding: 10px 20px;
+    border: none;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    font-size: 18px;
+    color: #333;
+}
+
+#searchInput:hover {
+    background-color: rgb(193, 240, 175);
+    color: #266419;
+}
+
+#searchButton {
+    padding: 10px 20px;
+    background-color: #138065;
+    color: #fff;
+    border: none;
+    font-size: 18px;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    border-radius: 5px;
+    margin-left: 10px;
+}
+
+#searchButton:hover {
+    color: #266419;
+    background-color: rgb(193, 240, 175);
+}
+
+.searchResults {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.searchResult {
+    margin-bottom: 60px;
+    width: 30%;
+    height: 100%;
+    border-radius: 5px;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+.searchResult img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.2s ease-in-out;
+    border-radius: 10%;
+}
+
+.searchResult:hover img {
+    opacity: .7;
+}
+
+.searchResult a {
+    font-size: 20px;
+    text-decoration: none;
+    color: #36e4b8;
+    display: block;
+    padding: 10px;
+    text-transform: capitalize; 
+}
+
+#showMore {
+    background-color: #008cba;
+    font-size: 18px;
+    border: none;
+    color: #fff;
+    padding: 10px 20px;
+    text-align: center;
+    display: block;
+    margin: 30px auto;
+    border-radius: 5px;
+    cursor: pointer;
+    display: none;
+}
+
+#showMore:hover{
+    background-color: #138065;
+
+}
+
+@media screen and (max-width: 768px) {
+    .searchResults{
+        padding: 20px;
+    }
+    .searchResult{
+        width: 45%;
+    }    
+}
+
+@media screen and (max-width: 480px) {
+    .searchResult{
+        width: 100%;
+    }    
 }
