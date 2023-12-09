@@ -30,6 +30,9 @@ function setActiveNavbarElement() {
         case "store":
             document.getElementById("navbar-store").setAttribute("class","active");
             break;
+        case "login":
+            document.getElementById("navbar-login").setAttribute("class","active");
+            break;
         default:
             break;
     }
