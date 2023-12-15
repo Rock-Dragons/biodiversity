@@ -108,11 +108,44 @@ nav #icon{
         left: 0;
     }
 }
-video{
+
+#video-background {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    top: 50px;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1000;
+    object-fit: cover;
+}
+
+#toggle-sound {
+    position: absolute;
+    font-size: 30px;
+    top: 80px;
+    right: 20px;
+    color: #1a473b;
+    background-color: #2b1cfa;
+    padding: 5px 15px;
+    /* border: 1px solid #000; */
+    cursor: pointer;
+    border-radius: 20px;
+  }
+
+  #toggle-sound:hover {
+    color: #031a14;
+    background-color: #008cba;
+
+  }
+
+/* video{
     position: fixed;
     height: 30vh - 30%;
     width: 100%;
-}
+} */
 /* .container{
     width: 100%;
     min-height: 100vh;
