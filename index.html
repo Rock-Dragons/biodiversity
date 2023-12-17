@@ -1,17 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <title>Biodiversity</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/stylesheet.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
     <script src="js/home.js"></script>
     <script src="js/main.js"></script>
+    <script src="/js/login.js"></script>
+
 </head>
+
 <body>
     <div id="navbar-placeholder"></div>
+    <video autoplay loop id="video-background">
+        <source src="/images/What is Biodiversity_.mp4" type="video/mp4">
+    </video>
+
+    <div id="toggle-sound"> &#128264 Sound Off </div>
+    <div>
+        <h1 class="section-header" style="color: black; font-size: 100px;">BIODIVERSITY</h1>
+        <h2 class="section-header">All the different kinds of life you'll find in one area!</h2>
+        <p></p>
+    </div>
+
+    <script>
+        const video = document.getElementById("video-background");
+        const toggleBtn = document.getElementById("toggle-sound");
+
+        video.muted = true;
+
+        toggleBtn.addEventListener("click", () => {
+            video.muted = !video.muted;
+            if (video.muted) {
+                toggleBtn.textContent = "🔈 Sound Off"
+            } else {
+                toggleBtn.textContent = "🔊 Sound On";
+
+            }
+        })
+
+    </script>
 
     <!-- <div class="container">
         <form action="https://www.google.com/search" method="get" class="search-bar">
@@ -21,4 +53,5 @@
         </form>
     </div> -->
 </body>
+
 </html>
