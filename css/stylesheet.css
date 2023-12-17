@@ -14,6 +14,8 @@
     margin: 0;
     text-decoration: none;
     list-style: none;
+    box-sizing: border-box;
+
 }
 
 body {
@@ -685,30 +687,6 @@ nav #icon {
     font-family: "Lato", sans-serif;
     text-align: justify;
 }
-.sidenavgenetic {
-    width: 130px;
-    position: fixed;
-    max-height: fit-content;
-    z-index: 1;
-    top: 20px;
-    left: -150px;
-    /* Start with the sidebar off-screen */
-    background: #eee;
-    overflow-x: hidden;
-    padding: 8px 0;
-    transition: 0.5s;
-    /* Add smooth transition for sliding effect */
-}
-.sidenav a {
-    padding: 6px 8px 6px 16px;
-    text-decoration: none;
-    font-size: 25px;
-    color: #2196F3;
-    display: block;
-}
-.sidenav a:hover {
-    color: #064579;
-}
 .maingenetic {
     margin-left: 0;
     /* Adjust margin when the sidebar is hidden */
@@ -718,30 +696,6 @@ nav #icon {
     transition: 0.5s;
     /* Add smooth transition for content movement */
 }
-/* Keyframes for auto-slider effect */
-@keyframes slideIn {
-    from {
-        left: -150px;
-        /* Start position off-screen */
-    }
-    to {
-        left: 0;
-        /* End position on-screen */
-    }
-}
-@media screen and (max-height: 450px) {
-    .sidenav {
-        padding-top: 15px;
-    }
-    .sidenav a {
-        font-size: 18px;
-    }
-}
-/* Apply keyframes to the sidebar when the page loads */
-.sidenavgenetic.auto-slider {
-    animation: slideIn 1s forwards;
-}
-* {box-sizing: border-box;}
 .header {
     text-align: center;
     padding: 32px;
