@@ -14,6 +14,7 @@
     margin: 0;
     text-decoration: none;
     list-style: none;
+    box-sizing: border-box;
 }
 body{
     font-family: 'Times New Roman';
@@ -655,7 +656,56 @@ nav #icon{
 .singUp-link p a:hover {
     text-decoration: underline;
 }
+#genetic {
+    font-family: "Lato", sans-serif;
+    text-align: justify;
+}
 
+.maingenetic {
+    margin-left: 0;
+    /* Adjust margin when the sidebar is hidden */
+    font-size: 28px;
+    /* Increased text to enable scrolling */
+    padding: 0px 10px;
+    transition: 0.5s;
+    /* Add smooth transition for content movement */
+}
+.header {
+    text-align: center;
+    padding: 32px;
+}
+.imagerow {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 4px;
+}
+/* Create four equal columns that sits next to each other */
+.columnimage {
+    flex: 25%;
+    max-width: 25%;
+    padding: 0 4px;
+}
+.columnimage img {
+    margin-top: 8px;
+    width: auto;
+    height: 220px;
+    vertical-align: middle;
+}
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media (max-width: 800px) {
+    .columnimage {
+        flex: 50%;
+        max-width: 50%;
+    }
+}
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media (max-width: 600px) {
+    .columnimage {
+        flex: 100%;
+        max-width: 100%;
+    }
+}
 
 
 
