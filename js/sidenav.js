@@ -1,6 +1,6 @@
-$.get("/components/navbar.html", function(data){
+$.get("/components/sidenav.html", function(data){
 
-    $("#navbar-placeholder").replaceWith(data);
+    $("#sidenav-placeholder").replaceWith(data);
     
     setActiveNavbarElement();
 
@@ -37,8 +37,3 @@ function setActiveNavbarElement() {
             break;
     }
 }
-
-$.get("/components/scrollButton.html", function(data){
-
-    $("#scrollButton-placeholder").replaceWith(data);
-})

@@ -19,6 +19,97 @@
 body{
     font-family: 'Times New Roman';
 }
+
+
+/* ------FAVICON -----*/
+
+.icon {
+    width: 32px;
+    height: 32px;
+    }
+
+
+/* -----------ScrollButton--------- */
+
+#scrollButton {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    background-color: red;
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 4px;
+  }
+  
+  #scrollButton:hover {
+    background-color: #555;
+  }
+
+/* ----- Sidenav ----- */
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 9999999999;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: all 0.5s;
+    padding-top: 60px;
+    
+  }
+  
+  .sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 20px;
+    color: white;
+    display: block;
+    transition: 0.3s;
+    
+  }
+  
+  .sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+
+  .sidenav a:hover {
+    color: #13b313;
+  }
+  
+  .sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 8px;
+    font-size: 35px;
+    margin-left: 50px;
+    
+  }
+
+  #main {
+    transition: margin-left .5s;
+    padding: 16px;
+    background-color:#342f7c;
+  }
+  
+  @media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+  }
+
+
+/* ----------------NAVBAR---------------- */
+
 nav{
     height: 80px;
     width: 100%;
@@ -55,11 +146,15 @@ nav a{
     border: 1px transparent;
     padding: 7px 10px;
     border-radius: 3px;
+    text-decoration: none;
 }
 a.active,a:hover{
-    border: 1px solid white;
+    border: 2px solid green;
     transition: .5s;
+    color:white;
 }
+
+
 nav #icon{
     color: white;
     font-size: 30px;
@@ -103,7 +198,7 @@ nav #icon{
     nav a{font-size: 20px;}
     a.active,a:hover{
     border: none;
-    color: #3498db;
+    color:#0e0;
     }
     nav ul.show{
         left: 0;
@@ -126,10 +221,10 @@ nav #icon{
 #toggle-sound {
     position: absolute;
     font-size: 30px;
-    top: 80px;
+    top: 90px;
     right: 20px;
-    color: #1a473b;
-    background-color: #2b1cfa;
+    color: #ffffff;
+    background-color: #2525ca;
     padding: 5px 15px;
     /* border: 1px solid #000; */
     cursor: pointer;
@@ -190,6 +285,8 @@ nav #icon{
     background: #58629b;
     cursor: pointer;
 }*/
+
+/*------------------------STORE-------------------------*/
 
 .band-name {
     text-align: center;
@@ -366,7 +463,7 @@ nav #icon{
     background-color: #209CDB;
 }
 
-/* ------------------------------- */
+/* ------------------------SPECIES------------------------ */
 
 
 #speciesBody {
@@ -500,9 +597,12 @@ nav #icon{
     }    
 }
 
-/* -------------------------------------------- */
+
+/* --------------------------SIGNUP-LOGIN---------------------------- */
+
 
 @import url('https://fonts.googleapis.com/css2?family=Pippins:wght@300;400;500;600;700;800;900&display=swap');
+
 /* 
 * {
     margin: 0;
@@ -656,6 +756,10 @@ nav #icon{
 .singUp-link p a:hover {
     text-decoration: underline;
 }
+
+/* -----------------------GENETIC------------------------- */
+
+
 #genetic {
     font-family: "Lato", sans-serif;
     text-align: justify;
@@ -707,5 +811,134 @@ nav #icon{
     }
 }
 
+/* ------------------------Ecosystem--------------------*/
 
+#ecosystemBody {
+    background-image: url("/images/background.jpg");
+    background-color: rgba(0, 0, 0, .3);
+    background-blend-mode: multiply;
+    color: #eee;
+}
+.definition {
+    text-align: center;
+    margin: 0;
+    font-size: 2.2em;
+    font-family :"Delicious Handrawn";
+    font-weight: lighter;
+    color: #aff589;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+#spform {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 60px;
+}
+
+#searchInput {
+    width: 60%;
+    max-width: 400px;
+    padding: 10px 20px;
+    border: none;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    font-size: 18px;
+    color: #333;
+}
+
+#searchInput:hover {
+    background-color: rgb(193, 240, 175);
+    color: #266419;
+}
+
+#searchButton {
+    padding: 10px 20px;
+    background-color: #138065;
+    color: #fff;
+    border: none;
+    font-size: 18px;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    border-radius: 5px;
+    margin-left: 10px;
+}
+
+#searchButton:hover {
+    color: #266419;
+    background-color: rgb(193, 240, 175);
+}
+
+.searchResults {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.searchResult {
+    margin-bottom: 60px;
+    width: 30%;
+    height: 100%;
+    border-radius: 5px;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+.searchResult img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.2s ease-in-out;
+    border-radius: 10%;
+}
+
+.searchResult:hover img {
+    opacity: .7;
+}
+
+.searchResult a {
+    font-size: 20px;
+    text-decoration: none;
+    color: #36e4b8;
+    display: block;
+    padding: 10px;
+    text-transform: capitalize; 
+}
+
+#showMore {
+    background-color: #008cba;
+    font-size: 18px;
+    border: none;
+    color: #fff;
+    padding: 10px 20px;
+    text-align: center;
+    display: block;
+    margin: 30px auto;
+    border-radius: 5px;
+    cursor: pointer;
+    display: none;
+}
+
+#showMore:hover{
+    background-color: #138065;
+
+}
+
+@media screen and (max-width: 768px) {
+    .searchResults{
+        padding: 20px;
+    }
+    .searchResult{
+        width: 45%;
+    }    
+}
+
+@media screen and (max-width: 480px) {
+    .searchResult{
+        width: 100%;
+    }    
+}
 

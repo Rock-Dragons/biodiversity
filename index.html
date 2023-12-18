@@ -6,14 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/stylesheet.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+    <link rel="icon" type="image/icon" sizes="32x32" href="/images/favicon.ico">
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
     <script src="js/home.js"></script>
     <script src="js/main.js"></script>
     <script src="/js/login.js"></script>
+    <script src="js/sidenav.js"></script>
 
 </head>
 <body>
     <div id="navbar-placeholder"></div>
+    <div id="sidenav-placeholder"></div>
+    <button id="scrollButton-placeholder"></button>
+    
     <video autoplay loop id="video-background">
         <source src="/images/What is Biodiversity_.mp4" type="video/mp4">
     </video>
@@ -34,7 +39,7 @@
         toggleBtn.addEventListener("click", ()=> {
             video.muted = !video.muted;
             if(video.muted){
-                toggleBtn.textContent = "🔈 Sound Off"
+                toggleBtn.textContent = "🔈 Sound Off" 
             } else {
                 toggleBtn.textContent = "🔊 Sound On";
 
@@ -42,6 +47,7 @@
         })
 
     </script>
+
 
     <!-- <div class="container">
         <form action="https://www.google.com/search" method="get" class="search-bar">
