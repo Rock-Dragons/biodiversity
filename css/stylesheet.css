@@ -58,66 +58,7 @@ body{
   #scrollButton:hover {
     color: var(--third-color);
   }
-
-/* ----- Sidenav ----- */
-
-.sidenav {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    z-index: 2;
-    top: 0;
-    left: 0;
-    background-color: #111;
-    overflow-x: hidden;
-    transition: all 0.5s;
-    padding-top: 60px;
-    
-  }
-  
-  .sidenav a {
-    padding: 8px 8px 8px 32px;
-    text-decoration: none;
-    font-size: 20px;
-    color: white;
-    display: block;
-    transition: 0.3s;
-    
-  }
-  
-  .sticky {
-    position: fixed;
-    top: 0;
-    width: 100%;
-  }
-
-  .sidenav a:hover {
-    color: #13b313;
-  }
-  
-  .sidenav .closebtn {
-    position: absolute;
-    top: 0;
-    right: 8px;
-    font-size: 35px;
-    margin-left: 50px;
-    
-  }
-
-  #main {
-    transition: margin-left .5s;
-    padding: 16px;
-    background-color:#342f7c;
-  }
-  
-  @media screen and (max-height: 450px) {
-    .sidenav {padding-top: 15px;}
-    .sidenav a {font-size: 18px;}
-  }
-
-
-/* ----------------NAVBAR---------------- */
-
+/* ----------------NAVBAR ---------------- */
 nav{
     position: sticky;
     top: 0;
@@ -128,9 +69,7 @@ nav{
     background-image: url("/images/abstract.jpg");
     z-index: 100;
 }
-.navbar-element{
-   font-size: 10px;
-}
+
 label.logo{
     font-size: 28px;
     font-weight: bold;
@@ -138,6 +77,11 @@ label.logo{
     padding: 0 50px;
     line-height: 80px;
 }
+
+nav .closebtn {
+   display: none;
+  }
+
 nav ul{
     float: right;
     margin-right: 40px;
@@ -151,15 +95,17 @@ nav a{
     color: white;
     font-size: 18px;
     text-transform: capitalize;
-    border: 1px transparent;
+    border: 1px green;
     padding: 7px 10px;
     border-radius: 3px;
     text-decoration: none;
 }
-a.active,a:hover{
-    border: 2px solid green;
+a.active{
+    text-decoration: underline;
+}
+a:hover{
+    color:green;
     transition: .5s;
-    color:white;
 }
 
 
@@ -172,43 +118,46 @@ nav #icon{
     cursor: pointer;
     display: none;
 }
-@media (max-width: 1048px){
-    label.logo{
-        font-size: 28px;
-        padding-left: 60px;
-    }
-    nav ul{
-        margin-right: 20px;
-    }
-    nav a{
-        font-size: 17px;
-    }
-}
-@media (max-width: 980px){
+/* ----------------SIDENAV ---------------- */
+@media (max-width: 1220px){
     nav #icon{
         display: block;
     }
+    nav .closebtn {
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 8px;
+        font-size: 35px;
+        margin-left: 50px;
+        transition: all 0.5s;
+      }
     nav ul{
         position: fixed;
         width: 50%;
-        height: 100vh;
-        background: #35402f;
-        top: 80px;
+        height: 100%;
         left: -100%;
-        text-align: center;
-        transition: all .5s;
+        background: #111;
+        top: 80px;
+        transition: all 0.5s;
     }
     nav li{
+        line-height: 8px;
+        padding: 8px;
+        text-decoration: none;
+        font-size: 30px;
+        color: white;
         display: block;
-        margin: 50px 0;
-        line-height: 30px;
+        transition: 0.3s;
     }
-    nav a{font-size: 20px;}
-    a.active,a:hover{
-    border: none;
-    color:#0e0;
+    a.active{
+        text-decoration: underline;
     }
-    nav ul.show{
+    a:hover{
+        color:green;
+        transition: .5s;
+    }
+    #navbar-container.show{
         left: 0;
     }
 }
@@ -244,56 +193,6 @@ nav #icon{
     background-color: #008cba;
 
   }
-
-/* video{
-    position: fixed;
-    height: 30vh - 30%;
-    width: 100%;
-} */
-/* .container{
-    width: 100%;
-    min-height: 100vh;
-    padding: 5%;
-    background-image: linear-gradient(rgba(0,8,51,0.9), rgba(0, 8, 51, 0.9)), url(images/redParrot,png);
-    background-position: center;
-    background-size: cover;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-} 
-
-
-
-.search-bar{
-    width: 100%;
-    max-width: 700px;
-    background: rgba(255, 255, 255, 0.2);
-    display: flex;
-    align-items: center;
-    border-radius: 60px;
-    padding: 10px 20px;
-    backdrop-filter: blur(4px) saturate(180%);
-}
-.search-bar input{
-    background: transparent;
-    flex: 1;
-    border: 0;
-    outline: none;
-    padding: 12px 10 px;
-    font-size: 20px;
-    color: black;
-}
-::placeholder{color: #cac7ff;}
-.search-bar button{width: 25px;}
-.search-bar button{
-    border: 0;
-    border-radius: 50%;
-    width: 60px;
-    height: 60px;
-    background: #58629b;
-    cursor: pointer;
-}*/
-
 /*------------------------STORE-------------------------*/
 
 .band-name {

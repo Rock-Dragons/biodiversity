@@ -7,10 +7,15 @@ $.get("/components/navbar.html", function(data){
     setActiveNavbarElement();
 
     $('#icon').click(function(){
-        console.log("test");
-        $('#navbar-container').toggleClass('show');
+        
+        toggleNav();
     });
 });
+
+function toggleNav(){
+    console.log("nav-toggle");
+    $('#navbar-container').toggleClass('show');
+}
 
 function setActiveNavbarElement() { 
     switch (actualPage) {
