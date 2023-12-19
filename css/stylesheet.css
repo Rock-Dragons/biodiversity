@@ -1,6 +1,6 @@
 :root {
-    --first-color:#C7FFED;
-    --second-color:#D8FFDB;
+    --first-color:#D8FFDB;
+    --second-color:#C7FFED;
     --third-color:#008F8C;
     --forth-color:#015958;
     --fifth-color:#023535;
@@ -849,3 +849,37 @@ nav #icon{
     }    
 }
 
+/* ------------------------FOOTER--------------------*/
+footer{
+    width: 100%;
+    background-color: black;
+    color: white;
+    section{
+        display: inline-block;
+        vertical-align:middle;
+    }
+    .logo-section{
+        width: 15%;
+        /* background-color: gray; */
+        img{
+            margin: 10px 0px 10px 30px;
+            width: 180px;
+        }
+    }
+    .social-media-section{
+        width: 70%;
+        text-align: center;
+        i{
+        color: var(--second-color);
+        }
+
+        i:hover{
+            color: var(--third-color);
+        }
+    }
+    p{
+        text-align: center;
+        color: var(--second-color);
+        padding-bottom: 10px;
+    }
+}
