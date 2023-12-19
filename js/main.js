@@ -68,3 +68,11 @@ function goToTop() {
 document.body.scrollTop = 0;
 document.documentElement.scrollTop = 0;
 }
+
+//Footer Area
+$.get("/components/footer.html", function(data){
+    console.log('footer-loaded');
+    if(actualPage != 'home'){
+        $("#footer-placeholder").replaceWith(data);
+    }
+})
