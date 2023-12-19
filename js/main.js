@@ -22,10 +22,10 @@ function setActiveNavbarElement() {
             document.getElementById("navbar-species").setAttribute("class","active");
             break;
         case "genetic":
-            document.getElementById("navbar-species").setAttribute("class","active");
+            document.getElementById("navbar-genetic").setAttribute("class","active");
             break;
         case "ecosystem":
-            document.getElementById("navbar-species").setAttribute("class","active");
+            document.getElementById("navbar-ecosystem").setAttribute("class","active");
             break;
         case "store":
             document.getElementById("navbar-store").setAttribute("class","active");

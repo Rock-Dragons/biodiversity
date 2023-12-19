@@ -1,3 +1,5 @@
+const actualPage = "login";
+
 const singInBtnLink = document.querySelector(".singInBtn-link");
 const singUpBtnLink = document.querySelector(".singUpBtn-link");
 const wrapper = document.querySelector(".wrapper");
