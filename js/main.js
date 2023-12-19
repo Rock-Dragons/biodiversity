@@ -1,3 +1,5 @@
+//Navbar Area
+
 $.get("/components/navbar.html", function(data){
 
     $("#navbar-placeholder").replaceWith(data);
@@ -38,7 +40,26 @@ function setActiveNavbarElement() {
     }
 }
 
+//Scroll Button Area
+let scrollButton;
 $.get("/components/scrollButton.html", function(data){
-
+    console.log('done');
     $("#scrollButton-placeholder").replaceWith(data);
+    scrollButton = document.getElementById("scrollButton");
 })
+
+window.onscroll = function() {displayScrollButton()};
+
+function displayScrollButton() {
+if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    scrollButton.style.display = "block";
+} else {
+    scrollButton.style.display = "none";
+}
+}
+
+
+function goToTop() {
+document.body.scrollTop = 0;
+document.documentElement.scrollTop = 0;
+}

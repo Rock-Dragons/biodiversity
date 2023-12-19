@@ -1,3 +1,11 @@
+:root {
+    --first-color:#C7FFED;
+    --second-color:#D8FFDB;
+    --third-color:#008F8C;
+    --forth-color:#015958;
+    --fifth-color:#023535;
+}
+
 @import url('https://fonts.googleapis.com/css2?family=Metal+Mania&family=Dancing+Script&family=Delicious+Handrawn&family=Luckiest+Guy&family=Pacifico&family=Poppins:wght@100;200;300;400;500;600;700;800&family=Raleway&display=swap');
 
 
@@ -37,18 +45,18 @@ body{
     bottom: 20px;
     right: 30px;
     z-index: 99;
-    font-size: 18px;
+    width: 2wv;
+    height:min-content ;
+    font-size: 3vw;
     border: none;
     outline: none;
-    background-color: red;
-    color: white;
+    background-color: transparent;
+    color: var(--forth-color);
     cursor: pointer;
-    padding: 15px;
-    border-radius: 4px;
   }
   
   #scrollButton:hover {
-    background-color: #555;
+    color: var(--third-color);
   }
 
 /* ----- Sidenav ----- */
