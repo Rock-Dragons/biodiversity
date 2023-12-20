@@ -25,23 +25,7 @@
         <p></p>
     </div>
 
-    <script>
-        const video = document.getElementById("video-background");
-        const toggleBtn = document.getElementById("toggle-sound");
 
-        video.muted = true;
-
-        toggleBtn.addEventListener("click", ()=> {
-            video.muted = !video.muted;
-            if(video.muted){
-                toggleBtn.textContent = "🔈 Sound Off" 
-            } else {
-                toggleBtn.textContent = "🔊 Sound On";
-
-            }
-        })
-
-    </script>
     <button id="scrollButton-placeholder"></button>
     <footer id="footer-placeholder"></footer>
 </body>

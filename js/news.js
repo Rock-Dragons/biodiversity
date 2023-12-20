@@ -1,7 +1,14 @@
+//Constant used for Navbar State Machine
 const actualPage = "news";
 
 var newsDataArr = []
+var newsDetalies;
 
+const API_KEY = "1d70c3dd3ec744d98d900ab6d6b33864"
+const HEADLINES_NEWS = "https://newsapi.org/v2/top-headlines?country=us&pageSize=20&category=science&apiKey=";
+const SEARCH_NEWS = "https://newsapi.org/v2/everything?q=";
+
+//Execute the code when the webpage is loaded
 document.addEventListener("DOMContentLoaded", function() {
 
 
@@ -9,18 +16,43 @@ const searchBtn = document.getElementById("searchBtn");
 
 const newsQuery = document.getElementById("newsQuery");
 const newsType = document.getElementById("newsType");
-const newsDetalies = document.getElementById("newsdetalies");
+newsDetalies = document.getElementById("newsdetalies");
 
-const API_KEY = "1d70c3dd3ec744d98d900ab6d6b33864"
-const HEADLINES_NEWS = "https://newsapi.org/v2/top-headlines?country=us&category=science&apiKey=";
-const SEARCH_NEWS = "https://newsapi.org/v2/everything?q=";
 
-window.onload= function(){
-    newsType.innerHTML="<h4 class='section-header' >Headlines</h4>"
-    fetchHeadlines()
 
+
+newsType.innerHTML="<h4 class='section-header' >Headlines</h4>"
+
+fetchHeadlines();
+
+const fetchQueryNews = async () => {
+    if(newsQuery.value == null){
+        return;
+    }
+
+    const response = await fetch(SEARCH_NEWS+encodeURIComponent(newsQuery.value)+"&apiKey="+API_KEY);
+    newsDataArr = []
+    if(response.status >= 200 && response.status < 300){
+        const myJson = await response.json();
+        newsDataArr = myJson.articles;
+    } else {
+        console.log(response.status, response.statusText);
+        newsDetalies.innerHTML = "<h5>No data Found</h5>";
+        return
+    }
+    displayNews();
 }
 
+searchBtn.addEventListener("click", function(){
+    console.log("clicked")
+    newsType.innerHTML="<h4 class='section-header'>Search : "+newsQuery.value+"</h4>";
+    fetchQueryNews();
+});
+
+
+
+
+})
 const fetchHeadlines = async () =>{
     const response = await fetch(SEARCH_NEWS + "biodiversity" + "&apiKey=" + API_KEY);
 
@@ -33,40 +65,12 @@ const fetchHeadlines = async () =>{
         console.log(response.status, response.statusText)
     }
 
-    displayNews()
+    displayNews();
 }
-
-const fetchQueryNews = async () => {
-    if(newsQuery.value == null){
-        return;
-    }
-
-    const response = await fetch(SEARCH_NEWS+encodeURIComponent(newsQuery.value)+"&apiKey="+API_KEY);
-    newsDataArr = []
-    if(response.status >= 200 && response.status < 300){
-        const myJson = await response.json()
-        newsDataArr = myJson.articles;
-    } else {
-        console.log(response.status, response.statusText)
-        newsDetalies.innerHTML = "<h5>No data Found</h5>";
-        return
-    }
-
-    displayNews()
-}
-
-searchBtn.addEventListener("click", function(){
-    console.log("clicked")
-    newsType.innerHTML="<h4 class='section-header'>Search : "+newsQuery.value+"</h4>";
-    fetchQueryNews();
-});
-
-
 
 function displayNews(){
     console.log('newsDataArr in displayNews:', newsDataArr); // Verificare newsDataArr
     console.log('newsDetalies:', newsDetalies); // Verificare newsDetalies
-    
     newsDetalies.innerHTML = "";
     
     if(newsDataArr.length == 0){
@@ -126,4 +130,3 @@ function displayNews(){
     })
     
 }
-})
