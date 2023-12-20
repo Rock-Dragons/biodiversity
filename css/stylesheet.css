@@ -118,6 +118,9 @@ nav #icon{
     cursor: pointer;
     display: none;
 }
+#searchbar{
+    z-index: 0;
+}
 /* ----------------SIDENAV ---------------- */
 @media (max-width: 1220px){
     nav #icon{
