@@ -1,65 +1,59 @@
 //Constant used for Navbar State Machine
 const actualPage = "news";
 
-var newsDataArr = []
+
+//News HTML Container
 var newsDetalies;
 
+//Array with data got from API Call
+var newsDataArr = [];
+
+//HTML 'Search News' Text Field 
+var newsQuery;
+
+//Super Secret API Key
 const API_KEY = "1d70c3dd3ec744d98d900ab6d6b33864"
+//API Link for the Headlines
 const HEADLINES_NEWS = "https://newsapi.org/v2/top-headlines?country=us&pageSize=20&category=science&apiKey=";
-const SEARCH_NEWS = "https://newsapi.org/v2/everything?q=";
+//API Link for User Queries
+const SEARCH_NEWS = "https://newsapi.org/v2/everything?q=biodiversity&pageSize=20";
 
 //Execute the code when the webpage is loaded
 document.addEventListener("DOMContentLoaded", function() {
 
-
-const searchBtn = document.getElementById("searchBtn");
-
-const newsQuery = document.getElementById("newsQuery");
-const newsType = document.getElementById("newsType");
-newsDetalies = document.getElementById("newsdetalies");
+    //Page Header - the value will be change when the search box is used
+    const newsHeader = document.getElementById("newsType");
 
 
+    newsQuery = document.getElementById("newsQuery");
+    newsDetalies = document.getElementById("newsdetalies");
 
+    //Create the Page Header
+    newsHeader.innerHTML="<h4 class='section-header' >Headlines</h4>"
 
-newsType.innerHTML="<h4 class='section-header' >Headlines</h4>"
+    //Get and Display the data for Headlines
+    fetchHeadlines();
 
-fetchHeadlines();
-
-const fetchQueryNews = async () => {
-    if(newsQuery.value == null){
-        return;
-    }
-
-    const response = await fetch(SEARCH_NEWS+encodeURIComponent(newsQuery.value)+"&apiKey="+API_KEY);
-    newsDataArr = []
-    if(response.status >= 200 && response.status < 300){
-        const myJson = await response.json();
-        newsDataArr = myJson.articles;
-    } else {
-        console.log(response.status, response.statusText);
-        newsDetalies.innerHTML = "<h5>No data Found</h5>";
-        return
-    }
-    displayNews();
-}
-
-searchBtn.addEventListener("click", function(){
-    console.log("clicked")
-    newsType.innerHTML="<h4 class='section-header'>Search : "+newsQuery.value+"</h4>";
-    fetchQueryNews();
-});
-
-
-
+    //When the search Button is pressed, get and display the data filtered
+    const searchBtn = document.getElementById("searchBtn");
+    searchBtn.addEventListener("click", function(){
+        //Update the Headline with the User Input
+        newsHeader.innerHTML="<h4 class='section-header'>Search : "+newsQuery.value+"</h4>";
+        //Get and Display the data filtered by the user
+        fetchQueryNews();
+    });
 
 })
-const fetchHeadlines = async () =>{
-    const response = await fetch(SEARCH_NEWS + "biodiversity" + "&apiKey=" + API_KEY);
 
+//Get data for the Headlines (when the page is opened)
+const fetchHeadlines = async () =>{
+    //API Call
+    const response = await fetch(SEARCH_NEWS + "&apiKey=" + API_KEY);
+
+    //If the call status is success, parse the data, else, display in the console the API status
     if(response.status >= 200 && response.status < 300){
         const myJson = await response.json();
         console.log(myJson)
-
         newsDataArr = myJson.articles
     } else {
         console.log(response.status, response.statusText)
@@ -68,17 +62,44 @@ const fetchHeadlines = async () =>{
     displayNews();
 }
 
+//Get data filtered by user (when the search box is used)
+const fetchQueryNews = async () => {
+
+    //If the user didn't entered any data, stop the function execution.
+    if(newsQuery.value == null){
+        return;
+    }
+
+    //API Call
+    const response = await fetch(SEARCH_NEWS+encodeURIComponent(newsQuery.value)+"&apiKey="+API_KEY);
+
+    //Reinitialize the Data Array
+    newsDataArr = []
+
+    //If the call status is success, parse the data, else, display in the console the API status
+    if(response.status >= 200 && response.status < 300){
+        const myJson = await response.json();
+        newsDataArr = myJson.articles;
+    } else {
+        console.log(response.status, response.statusText);
+        newsDetalies.innerHTML = "<h5>No data Found</h5>";
+        return
+    }
+
+    displayNews();
+}
+
+//Generate the HTML elements with the data received from API Call
 function displayNews(){
     console.log('newsDataArr in displayNews:', newsDataArr); // Verificare newsDataArr
     console.log('newsDetalies:', newsDetalies); // Verificare newsDetalies
+
     newsDetalies.innerHTML = "";
     
     if(newsDataArr.length == 0){
         newsDetalies.innerHTML = "<h5>No data found</h5>"
         return
     }
-    
-    
 
     newsDataArr.forEach(news => {
         var date = news.publishedAt.split("T")
@@ -118,7 +139,6 @@ function displayNews(){
         cardBody.appendChild(discription)
         cardBody.appendChild(link)
         
-        
         card.appendChild(image)
         card.appendChild(cardBody)
         
@@ -126,7 +146,5 @@ function displayNews(){
         
         newsDetalies.appendChild(col)
 
-        
     })
-    
 }
